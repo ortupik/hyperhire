@@ -4,7 +4,7 @@
     <HeaderTop class="transparent-bg header" />
     <JumboTop class="transparent-bg main"  /> 
   	</div>
-    <q-page-container>
+    <q-page-container class="page-body">
       <router-view />
     </q-page-container>
 	<footer class="sticky-footer q-pa-sm text-center bg-grey-2"> 
@@ -35,6 +35,7 @@ defineOptions({
   .main {
     padding: 70px;
   }
+  
 }
 @media (max-width: 992px) {
   .header{
@@ -44,6 +45,17 @@ defineOptions({
   }
   
 }
+@media (min-width: 1400px) {
+.page-body{
+  padding: 100px;
+}
+}
+@media (max-width: 1400px) {
+.page-body{
+  padding: 50px;
+}
+}
+
 .jumbotron {
   background-size: cover;
   background-position: center;
