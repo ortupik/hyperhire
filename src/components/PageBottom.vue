@@ -19,7 +19,7 @@
         <q-card class="card" v-for="(card, index) in cards" :key="index">
           <q-card-section class="icon-section">
             <div class="icon-box">
-              <q-icon :name="card.icon" size="2em" color="grey-7" />
+              <q-icon :name="card.icon" size="2em" color="#30a192" />
             </div>
           </q-card-section>
           <q-card-section>
@@ -124,7 +124,9 @@ const companyData = [
   }
 
 }
-
+.icon-box i {
+  color: #30a192;
+}
 .right-section {
   flex: 2;
   /* Takes 2/3 of the row by default */
@@ -133,24 +135,20 @@ const companyData = [
 .card-container {
   display: flex;
   justify-content: space-between;
-  /* Distribute cards evenly */
   flex-wrap: wrap;
 }
 
 .card {
   width: 100%;
   max-width: 23%;
-  /* Adjust for 4 cards in a row with some margin */
   margin: 10px;
   border: none;
-  /* Remove default border */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 5px;
 }
 
 .icon-section {
   text-align: left;
-  /* Center the icon */
   padding: 10px;
 }
 
@@ -169,20 +167,15 @@ const companyData = [
 }
 
 .icon-box {
-  background-color: #f5f5f5;
-  /* Light gray background */
+  background-color: #30a192;
   padding: 15px;
   border-radius: 8px;
-  /* Rounded corners */
   display: inline-flex;
-  /* Center the icon */
-}
+  color: #30a192;
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 1024px) {
   .card {
     max-width: 48%;
-    /* Two cards per row */
   }
 }
 
@@ -194,22 +187,17 @@ const companyData = [
 
   .right-section {
     flex: 1 100%;
-    /* Take full width on small screens */
   }
 
   .card {
     max-width: 100%;
-    /* One card per row */
   }
 }
 
 .text-row {
   display: grid;
-  /* Use grid for better control */
   grid-template-columns: repeat(4, 1fr);
-  /* 4 equal columns */
   gap: 20px;
-  /* Adjust spacing between columns */
   margin-top: 30px;
 }
 
@@ -228,18 +216,15 @@ const companyData = [
   color: #5e626e;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1024px) {
   .row {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columns */
   }
 }
 
 @media (max-width: 600px) {
   .row {
     grid-template-columns: repeat(1, 1fr);
-    /* 1 column */
   }
 }
 </style>
