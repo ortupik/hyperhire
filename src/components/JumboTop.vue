@@ -1,7 +1,7 @@
 <template>
 
         <div class="row full-width full-height justify-center items-center transparent-bg jumbo">
-          <div class="col-md-6 col-12 bg-white q-pa-lg  transparent-bg">
+          <div class="col-md-7 col-12 bg-white q-pa-lg  transparent-bg">
              <div class="text-h4 text-weight-bold fade-up">
               Finding the best foreign talent?
             </div>
@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-12 bg-white  transparent-bg">
+          <div class="col-md-5 col-12 bg-white  transparent-bg">
 		    <MyCarousel />
           </div>
 		  
@@ -41,9 +41,9 @@
 				infinite
 				:interval="5000" 
 				swipeable
-				class="carousel"
+				class="carousel  hide-scrollbar"
 						  >
-				<q-carousel-slide :name="1" class="row no-wrap justify-start items-center q-gutter-md">
+				<q-carousel-slide :name="1" class="row no-wrap justify-start items-center q-gutter-md hide-scrollbar">
 				  <q-btn 
 					v-for="(item, index) in slides.slice(0, 4)" :key="index"
 					flat 
@@ -55,7 +55,7 @@
 				  </q-btn>
 				</q-carousel-slide>
 
-				<q-carousel-slide :name="2" class="row no-wrap justify-start items-center q-gutter-md">
+				<q-carousel-slide :name="2" class="row no-wrap justify-start items-center q-gutter-md hide-scrollbar">
 				  <q-btn 
 					v-for="(item, index) in slides.slice(1, 5)" :key="index"
 					flat 
@@ -109,6 +109,7 @@ export default {
 .sum{
   margin-bottom:20px;
   margin-top:20px;
+  padding:10px;
 }
 .carousel{
   background: transparent;
@@ -117,18 +118,17 @@ export default {
   margin-bottom:30px;
 }
 .transparent-button {
-  color: white; /* White text */
-  border: none;    /* Remove default button border */
-  padding: 20px 20px; /* Adjust padding for size */
-  border-radius: 8px; /* Rounded corners */
-  min-width: 200px; /* Minimum width for better appearance */
+  color: white; 
+  border: none;    
+  padding: 15px 10px; 
+  border-radius: 8px; 
+  min-width: 250px; 
    background-color: rgba(255, 255, 255, 0.15);
    
   .q-btn__content {
     align-items: center;         /* Vertically center icon and text */
     gap: 12px;                  /* Add spacing between icon and text */
 	font-size:20px;
-	justify-content: space-between;
 	flex-direction: row-reverse; 
   }
   .label {
@@ -146,8 +146,8 @@ export default {
 }
 
 .que{
-  margin-bottom: 50px;
-  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-top: 40px;
 }
  .with-top-line {
     border-top: 1px solid white; /* Adjust thickness as needed */
@@ -175,5 +175,11 @@ export default {
 .jumbo {
   padding: 30px;
 }
+/* Hide scrollbar styles */
+.q-panel {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
 
 </style>

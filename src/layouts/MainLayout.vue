@@ -1,8 +1,8 @@
 <template>
   <q-layout view="lHh Lpr lFf" >
    <div class="jumbotron">
-    <HeaderTop class="transparent-bg" />
-    <JumboTop class="transparent-bg  " /> 
+    <HeaderTop class="transparent-bg header" />
+    <JumboTop class="transparent-bg main"  /> 
   	</div>
     <q-page-container>
       <router-view />
@@ -26,6 +26,24 @@ defineOptions({
 </script>
 
 <style lang="scss">
+@media (min-width: 992px) {
+  .header{
+    padding-left:70px;
+	padding-right:50px;
+	padding-top: 20px;
+  }
+  .main {
+    padding: 70px;
+  }
+}
+@media (max-width: 992px) {
+  .header{
+    padding-left:10px;
+	padding-right:10px;
+	padding-top: 10px;
+  }
+  
+}
 .jumbotron {
   background-size: cover;
   background-position: center;
@@ -40,7 +58,6 @@ defineOptions({
 
 
 .sticky-footer {
-  position: sticky;
   bottom: 0;
   width: 100%;
   z-index: 10;

@@ -3,7 +3,7 @@
       <q-toolbar class="hyperhire-toolbar ">
         <q-toolbar-title class="hyperhire-logo">
           <img src="logo-light.png" alt="Hyperhire Logo" />
-          <span class="title">hyperhire</span>
+          <span class="title">Hyperhire</span>
         </q-toolbar-title>
 
         <div class="menus gt-xs">
@@ -43,7 +43,8 @@ export default {
 
 .hyperhire-logo {
   img {
-    max-height: 20px;
+    max-height: 25px;
+	padding-top:10px;
   }
 }
 

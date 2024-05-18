@@ -17,7 +17,7 @@
       :key="index" 
       :name="index"
     >
-      <div class="row q-gutter-md q-ma-md">
+      <div class="row ">
         <MyCard 
           v-for="(card, i) in slideContent.cards" 
           :key="i" 
@@ -34,7 +34,7 @@
     transition-hide="fade"
     anchor="top middle"
     self="top middle"
-    :offset="[0, 5]"
+    :offset="[0, 25]"
     class="tooltip-content"
   >
     <div class="row items-center">
@@ -134,6 +134,12 @@ export default {
 .q-carousel{
   height:auto;
   width:100%;
+  padding: 0px;
+}
+q-carousel__slide{
+  padding: 0px;
+  background: red;
+  margin: 0px;
 }
 .tooltip-content {
   background-color: rgba(255, 255, 255, 0.95); 
