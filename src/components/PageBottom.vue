@@ -141,7 +141,7 @@ const companyData = [
   width: 100%;
   max-width: 23%;
   /* Adjust for 4 cards in a row with some margin */
-  margin: 1%;
+  margin: 10px;
   border: none;
   /* Remove default border */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -210,13 +210,12 @@ const companyData = [
   /* 4 equal columns */
   gap: 20px;
   /* Adjust spacing between columns */
-  padding: 30px;
   margin-top: 30px;
 }
 
 .column {
   text-align: left;
-  /* Align text to the left */
+  margin: 100px;
 }
 
 .top-text {

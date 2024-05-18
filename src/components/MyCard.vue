@@ -6,7 +6,7 @@
       </q-avatar>
 
       <div class="text-h5 text-weight-bold">{{ card.name }}</div>
-      <div class="text-primary" color="primary">{{ card.title }}</div>
+      <div class="text-primary  text-weight-bold title" color="primary">{{ card.title }}</div>
 
       <q-separator spaced />
 	  <div class="justify-center items-center top-skill flex">
@@ -35,14 +35,15 @@ export default {
 .top-skill {
   margin-top: 10px;
   margin-bottom:10px;
+  padding:10px;
 }
 .skill-div {
-  border: 0.5px solid gray; 
+  border: 0.3px solid gray; 
   color: #616161; /* Dark gray text color */
   padding: 5px;
-width: fit-content; 
-  border-radius: 5px; 
-  margin:8px;
+  width: fit-content; 
+  border-radius: 8px; 
+  margin:5px;
   text-align: center;
 }
 
@@ -50,13 +51,22 @@ width: fit-content;
   width: 100%;
   transition: transform 0.5s ease, opacity 0.5s ease;
   height: 100%;
-  color: black;
+  color: darkgray;
+  border-radius: 10px; 
+  min-height:360px;
+  
+  .title{
+    font-size:16px;
+	margin-top: 8px;
+	margin-bottom: 15px;
+  }
 }
 .q-avatar {
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.2s ease;
-  margin-top:15px;
+  margin-top:30px;
+  margin-bottom: 25px;
 
   &:hover {
     transform: scale(1.05);
