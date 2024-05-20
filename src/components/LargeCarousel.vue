@@ -16,13 +16,14 @@
       v-for="(slideContent, index) in slides" 
       :key="index" 
       :name="index"
+      class="carousel-slide"
     >
-      <div class="row ">
+      <div class="card-container">
         <MyCard 
           v-for="(card, i) in slideContent.cards" 
           :key="i" 
           :card="card" 
-          :position="i"
+          :class="{'left-card': i === 0, 'center-card': i === 1, 'right-card': i === 2}"
         />
       </div>
     </q-carousel-slide>
@@ -34,7 +35,7 @@
     transition-hide="fade"
     anchor="top middle"
     self="top middle"
-    :offset="[0, 25]"
+    :offset="[0, 45]"
     class="tooltip-content"
   >
     <div class="row items-center">
@@ -54,9 +55,9 @@ export default {
   },
   setup() {
     const slideIndex = ref(0);
-    const showTooltip = ref(true);  // Start with the tooltip hidden
+    const showTooltip = ref(true);
     const tooltipTimeout = ref(null);
-	let randomFig = ref(100)
+    let randomFig = ref(100);
 
     const slides = [
       {
@@ -66,21 +67,13 @@ export default {
             name: "John Doe", 
             title: "Web Developer 5y+", 
             skills: ["Web Design", "CSS3", "JavaScript"] 
-          }
-        ]
-      },
-      {
-        cards: [
+          },
           { 
             imageSrc: "profile.png", 
             name: "Jane Smith", 
             title: "UX/UI Designer 3y+", 
             skills: ["Figma Design", "Adobe XD", "User Research"] 
-          }
-        ]
-      },
-      {
-        cards: [
+          },
           { 
             imageSrc: "profile.png", 
             name: "Alex Johnson", 
@@ -96,6 +89,18 @@ export default {
             name: "Emily Davis", 
             title: "Marketing Specialist 4y+", 
             skills: ["Artificial Intelligence", "JavaScript", "Content Marketing"] 
+          },
+          { 
+            imageSrc: "profile.png", 
+            name: "Michael Brown", 
+            title: "DevOps Engineer 6y+", 
+            skills: ["AWS", "Docker", "Kubernetes"] 
+          },
+          { 
+            imageSrc: "profile.png", 
+            name: "Sophia Lee", 
+            title: "Product Manager 3y+", 
+            skills: ["Project Management", "Agile", "Scrum"] 
           }
         ]
       }
@@ -105,22 +110,18 @@ export default {
 
     function handleSlide(newIndex) {
       slideIndex.value = newIndex;
-	  randomFig.value = Math.floor(Math.random()*1000,2)
-      // Clear any existing timeout
+      randomFig.value = Math.floor(Math.random() * 1000, 2);
       clearTimeout(tooltipTimeout.value);
-
-      // Show the tooltip
       showTooltip.value = true;
-      // Set new timeout to hide the tooltip
       tooltipTimeout.value = setTimeout(() => {
         showTooltip.value = false;
-      }, 2000); // Tooltip will be visible for 2 seconds
+      }, 2000);
     }
 
     onMounted(() => {
       const timer = setInterval(() => {
         slideIndex.value = (slideIndex.value + 1) % slides.length;
-		handleSlide(slideIndex.value);
+        handleSlide(slideIndex.value);
       }, 5000);
       onBeforeUnmount(() => clearInterval(timer));
     });
@@ -129,32 +130,70 @@ export default {
   }
 };
 </script>
-<style lang="scss" >
 
-.q-carousel{
-  height:auto;
-  width:100%;
+<style lang="scss">
+.q-carousel {
+  height: auto;
+  width: 100%;
   padding: 0px;
 }
-q-carousel__slide{
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0px;
-  background: red;
   margin: 0px;
 }
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.MyCard {
+  transition: transform 0.3s, z-index 0.3s;
+  position: absolute;
+}
+
+.left-card {
+  transform: translateX(50%) scale(0.85);
+  z-index: 1;
+  opacity: 0.8;
+
+}
+
+.center-card {
+  transform: translateX(0);
+  z-index: 2;
+  width: 50%;
+}
+
+.right-card {
+  transform: translateX(-50%) scale(0.85);
+  z-index: 1;
+  opacity: 0.8;
+}
+
 .tooltip-content {
-  background-color: rgba(255, 255, 255, 0.95); 
-   color: #00c595;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #00c595;
   padding: 8px;
   border-radius: 4px;
   font-size: 14px;
 }
-.tooltip-icon{
-    height: 19px;
-    width: 19px; 
-    object-fit: contain; 
+
+.tooltip-icon {
+  height: 19px;
+  width: 19px;
+  object-fit: contain;
 }
-tooltip-text{
-font-size:19px;
-font-weight:900;
+
+.tooltip-text {
+  font-size: 19px;
+  font-weight: 900;
 }
 </style>

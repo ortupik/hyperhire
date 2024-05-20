@@ -61,7 +61,7 @@ defineOptions({
   background-position: center;
   min-height: 500px;
   color: white; // Set text color to white for better contrast
-  background: linear-gradient(180deg, #30a192 0%, #3a9ad9 100%)}
+  background: linear-gradient(180deg, #2ea39b 0%, #3a9ad9 100%)}
 
 
 .transparent-bg {

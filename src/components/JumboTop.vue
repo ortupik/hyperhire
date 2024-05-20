@@ -1,7 +1,7 @@
 <template>
 
         <div class="row full-width full-height justify-center items-center transparent-bg jumbo">
-          <div class="col-md-7 col-12 bg-white q-pa-lg  transparent-bg">
+          <div class="col-md-6 col-12 bg-white q-pa-lg  transparent-bg">
              <div class="text-h4 text-weight-bold fade-up">
               Finding the best foreign talent?
             </div>
@@ -27,8 +27,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5 col-12 bg-white  transparent-bg">
-		    <MyCarousel />
+          <div class="col-md-6 col-12 bg-white  transparent-bg">
+		    <LargeCarousel />
           </div>
 		  
 		  <div class="col-12">
@@ -74,11 +74,14 @@
 <script >
   import { ref } from 'vue';
 
-  import MyCarousel from 'components/MyCarousel.vue'
+  import LargeCarousel from 'components/LargeCarousel.vue'
+  //import SmallCarousel from 'components/SmallCarousel.vue'
+
 
 export default {
   components: {
-    MyCarousel
+    LargeCarousel,
+	//SmallCarousel
   },
   setup() {
     return {
@@ -120,26 +123,26 @@ export default {
 .transparent-button {
   color: white; 
   border: none;    
-  padding: 15px 10px; 
+  padding: 25px 25px; 
   border-radius: 8px; 
   min-width: 250px; 
    background-color: rgba(255, 255, 255, 0.15);
    
   .q-btn__content {
     align-items: center;         /* Vertically center icon and text */
-    gap: 12px;                  /* Add spacing between icon and text */
-	font-size:20px;
+    gap: 18px;                  /* Add spacing between icon and text */
+	font-size:25px;
 	flex-direction: row-reverse; 
   }
   .label {
     order: 1; /* Ensure label comes first */
-    font-size: 20px; 
+    font-size: 25px; 
   }
 
   .icon {
     order: 2; /* Ensure icon comes second */
-    height: 34px; /* Set the desired height */
-    width: 34px; /* Set the desired width */
+    height: 39px; /* Set the desired height */
+    width: 39px; /* Set the desired width */
     object-fit: contain; /* How the image should fit inside the container */
   }
   

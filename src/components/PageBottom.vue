@@ -129,7 +129,6 @@ const companyData = [
 }
 .right-section {
   flex: 2;
-  /* Takes 2/3 of the row by default */
 }
 
 .card-container {
@@ -182,7 +181,6 @@ const companyData = [
 @media (max-width: 600px) {
   .left-section {
     flex: 1 100%;
-    /* Take full width on small screens */
   }
 
   .right-section {

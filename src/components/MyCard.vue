@@ -48,13 +48,13 @@ export default {
 }
 
 .my-card {
-  width: 100%;
   transition: transform 0.5s ease, opacity 0.5s ease;
   height: 100%;
   color: darkgray;
   border-radius: 10px; 
   min-height:360px;
-  
+  min-width:250px;	
+
   .title{
     font-size:16px;
 	margin-top: 8px;
